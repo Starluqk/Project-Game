@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -6,7 +7,8 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody2D rb;
     private float moveInput;
-
+    
+    
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6174807789897541106}
   - component: {fileID: 5792286682981971190}
   - component: {fileID: 1559245344550081120}
-  - component: {fileID: -8573193732402604550}
+  - component: {fileID: 2145318852192442211}
   m_Layer: 0
   m_Name: Isometric Diamond
   m_TagString: Untagged
@@ -166,7 +166,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 0.5}
   m_EdgeRadius: 0
---- !u!114 &-8573193732402604550
+--- !u!114 &2145318852192442211
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,7 +175,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1112761263842588772}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2a626c35c3053ce47bcb919058411f62, type: 3}
+  m_Script: {fileID: 11500000, guid: 0cff2bd6074ddb24990f1d6022dc2791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   lifeTime: 3
