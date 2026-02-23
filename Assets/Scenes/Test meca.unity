@@ -282,7 +282,7 @@ GameObject:
   m_Component:
   - component: {fileID: 605536534}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -734,8 +734,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b95c836d547b1e40a4d855ea8ad984d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
-  projectilePrefab: {fileID: 0}
-  firePoint: {fileID: 0}
+  projectilePrefab: {fileID: 1112761263842588772, guid: 6c7c594d8070ad94785bb6fade09f0e8, type: 3}
+  firePoint: {fileID: 605536534}
   projectileSpeed: 10
 --- !u!96 &1451458765
 TrailRenderer:
