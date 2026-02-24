@@ -208,7 +208,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8be417dce96654c409246ec63b6221d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShowLevels
-  buttonLevel: {fileID: 705507385679009393, guid: 99a6531cca7cb8d4c8422852fe3fe8fe, type: 3}
+  buttonLevel: {fileID: 3188088158014687626, guid: 27e40327f8a9ec1418ab1a28e7cc8be3, type: 3}
 --- !u!114 &179657208
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,7 +226,7 @@ MonoBehaviour:
     m_Right: 25
     m_Top: 25
     m_Bottom: 25
-  m_ChildAlignment: 0
+  m_ChildAlignment: 1
   m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 70, y: 70}

@@ -1,4 +1,5 @@
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ShowLevels : MonoBehaviour
@@ -12,7 +13,6 @@ public class ShowLevels : MonoBehaviour
             GameObject labell = Instantiate(buttonLevel, transform);
             TextMeshProUGUI levelLabell = labell.GetComponentInChildren<TextMeshProUGUI>();
             levelLabell.text = (i+1).ToString();
-            
         }
     }
 
