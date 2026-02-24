@@ -16,9 +16,10 @@ public class PlayerShoot : MonoBehaviour
 
     void Shoot()
     {
-        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+        GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
 
         Rigidbody2D rb = projectile.GetComponent<Rigidbody2D>();
-        rb.linearVelocity = firePoint.right * projectileSpeed;
+        float direction = transform.localScale.x;
+        rb.linearVelocity = new Vector2(direction * projectileSpeed,0);
     }
 }

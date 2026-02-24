@@ -1,17 +1,20 @@
+using System.Collections;
 using UnityEngine;
-
+// ne pas utiliser
 public class PlayerDash : MonoBehaviour
 {
-    public float dashForce = 15f;
+    
+
+    public float dashForce = 20f;
     public float dashDuration = 0.2f;
     public float dashCooldown = 1f;
 
     private Rigidbody2D rb;
-    private bool isDashing = false;
-    private float dashTime;
-    private float lastDashTime;
+    private bool isDashing;
+ 
+    private bool canDash;
 
-    private float moveInput;
+
 
     void Start()
     {
@@ -20,32 +23,27 @@ public class PlayerDash : MonoBehaviour
 
     void Update()
     {
-        moveInput = Input.GetAxisRaw("Horizontal");
-
-        if (Input.GetKeyDown(KeyCode.LeftShift) && Time.time > lastDashTime + dashCooldown)
+   
+        if (Input.GetKeyDown(KeyCode.A) &&  canDash)
         {
-            StartDash();
+            
+            Debug.Log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaah");
+            StartCoroutine(Dash());
         }
     }
 
-    void FixedUpdate()
-    {
-        if (isDashing)
-        {
-            rb.linearVelocity = new Vector2(moveInput * dashForce, 0);
-        }
-    }
+   IEnumerator Dash()
+   {
+       canDash = false;
+       isDashing = true;
+       float direction = transform.localScale.x;
+       rb.linearVelocity = new Vector2(direction*dashForce,0);
+       yield return new WaitForSeconds(dashDuration);
+       isDashing = false;
+       yield return new WaitForSeconds(dashCooldown);
+       canDash = true;
 
-    void StartDash()
-    {
-        isDashing = true;
-        dashTime = dashDuration;
-        lastDashTime = Time.time;
-        Invoke(nameof(StopDash), dashDuration);
-    }
-
-    void StopDash()
-    {
-        isDashing = false;
-    }
+   }
 }
+
+   
