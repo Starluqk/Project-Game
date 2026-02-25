@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundCheckRadius = 0.2f;
     public LayerMask groundLayer;
+    public float jumpBufferTime = 0.2f;
 
     [Header("Dash")]
     public float dashForce = 20f;
@@ -22,31 +23,53 @@ public class PlayerMovement : MonoBehaviour
     private bool isGrounded;
     private bool isDashing = false;
     private bool canDash = true;
+    
+    private float jumpBufferCounter;
+    private SpriteRenderer sr;
+    
+    [Header("Réglages Tir")]
+    public Transform FirePoint;
+    private float FirePointX;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
+        
+        // --- FIX : Assure-toi que le FirePoint n'est pas à 0 dans l'inspecteur ---
+        FirePointX = FirePoint.localPosition.x;
+        if (FirePointX == 0) FirePointX = 0.6f; // Valeur de secours si oublié
     }
 
     void Update()
     {
         moveInput = Input.GetAxisRaw("Horizontal");
 
-        // Retourner le joueur
+        // Retourner le joueur et le point de tir
         if (moveInput > 0)
-            transform.localScale = new Vector3(1, 1, 1);
+        {
+            sr.flipX = false;
+            FirePoint.localPosition = new Vector3(FirePointX, FirePoint.localPosition.y, FirePoint.localPosition.z);
+            FirePoint.localRotation = Quaternion.Euler(0, 0, 0);
+        }
         else if (moveInput < 0)
-            transform.localScale = new Vector3(-1, 1, 1);
+        {
+            sr.flipX = true;
+            FirePoint.localPosition = new Vector3(-FirePointX, FirePoint.localPosition.y, FirePoint.localPosition.z);
+            FirePoint.localRotation = Quaternion.Euler(0, 180, 0);
+        }
 
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
 
-        // SAUT
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isDashing)
+        if (Input.GetKeyDown(KeyCode.Space)) jumpBufferCounter = jumpBufferTime;
+        else jumpBufferCounter -= Time.deltaTime;
+
+        if (jumpBufferCounter > 0f && isGrounded && !isDashing)
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            jumpBufferCounter = 0f;
         }
 
-        // DASH DIRECTIONNEL
         if (Input.GetKeyDown(KeyCode.LeftShift) && canDash)
         {
             StartCoroutine(Dash());
@@ -71,21 +94,30 @@ public class PlayerMovement : MonoBehaviour
 
         Vector2 dashDirection = new Vector2(horizontal, vertical);
 
-        // Si aucune direction pressée → dash vers l’avant
         if (dashDirection == Vector2.zero)
         {
-            dashDirection = new Vector2(transform.localScale.x, 0);
+            // --- FIX : On utilise le flipX pour savoir où dasher par défaut ---
+            float direction = sr.flipX ? -1f : 1f;
+            dashDirection = new Vector2(direction, 0);
         }
 
         dashDirection.Normalize();
-
         rb.linearVelocity = dashDirection * dashForce;
 
         yield return new WaitForSeconds(dashDuration);
-
         isDashing = false;
 
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    // --- ASTUCE : Voir le cercle de détection du sol ---
+    private void OnDrawGizmosSelected()
+    {
+        if (groundCheck != null)
+        {
+            Gizmos.color = Color.red;
+            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
+        }
     }
 }
