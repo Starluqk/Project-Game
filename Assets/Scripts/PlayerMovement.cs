@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     public float dashCooldown = 1f;
     private bool isDashing = false;
     private bool canDash = true;
+    private float gravitydefault;
 
     [Header("Système de Tir (Perso 2 uniquement)")]
     public GameObject projectilePrefab;
@@ -42,14 +43,15 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
+        gravitydefault = GetComponent<Rigidbody2D>().gravityScale;
         
         UpdateCharacterAppearance();
     }
 
     void Update()
     {
-        // 1. SWITCH DE PERSONNAGE (Touche C)
-        if (Input.GetKeyDown(KeyCode.C))
+        // 1. SWITCH DE PERSONNAGE (Touche Click droit)
+        if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             isPlayerOne = !isPlayerOne;
             UpdateCharacterAppearance();
@@ -61,6 +63,7 @@ public class PlayerController : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
+        anim.SetBool("isGrounded", isGrounded);
 
         // 3. ORIENTATION
         if (moveInput > 0) sr.flipX = false;
@@ -84,13 +87,13 @@ public class PlayerController : MonoBehaviour
         }
 
         // 5. DASH (RESTRINT AU JOUEUR 1)
-        if (Input.GetKeyDown(KeyCode.LeftShift) && canDash && isPlayerOne)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && canDash && isPlayerOne)
         {
             StartCoroutine(Dash());
         }
 
         // 6. TIR (RESTRINT AU JOUEUR 2 - Touche F)
-        if (Input.GetKeyDown(KeyCode.F) && !isPlayerOne)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !isPlayerOne)
         {
             Shoot();
         }
@@ -126,9 +129,12 @@ public class PlayerController : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
+        Rigidbody2D gravity = GetComponent<Rigidbody2D>();
+        gravity.gravityScale = 0;
         rb.linearVelocity = lastDirection * dashForce;
         yield return new WaitForSeconds(dashDuration);
         isDashing = false;
+        gravity.gravityScale = gravitydefault;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
