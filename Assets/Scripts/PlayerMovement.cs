@@ -61,6 +61,7 @@ public class PlayerController : MonoBehaviour
         moveInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
+        anim.SetBool("isGrounded", isGrounded);
 
         // 3. ORIENTATION
         if (moveInput > 0) sr.flipX = false;
