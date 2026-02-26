@@ -23,7 +23,7 @@ public class Projectile : MonoBehaviour
         } if (collision.CompareTag("Ground"))
         {
             Destroy(gameObject);
-            
+            Debug.Log(" toucher le mur");
         }
     }
 }
