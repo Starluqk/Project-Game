@@ -10,4 +10,14 @@ public class LevelOnClick : MonoBehaviour
     {
         GameManager.ClickLevel(levelLabell.text);
     }
+
+    public void OnPlay()
+    {
+        GameManager.PlayButton();
+    }
+
+    public void OnChooseLevel()
+    {
+        GameManager.ShowLevels();
+    }
 }
