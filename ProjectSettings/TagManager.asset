@@ -7,6 +7,7 @@ TagManager:
   - MurDestructble
   - Ennemi
   - Ground
+  - Danger
   layers:
   - Default
   - TransparentFX

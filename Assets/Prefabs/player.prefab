@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 6734486311831384835}
   - component: {fileID: 3794715321433117371}
   - component: {fileID: 3844210266113652189}
-  - component: {fileID: 6991730450889825884}
   - component: {fileID: 6678861612766720214}
   - component: {fileID: 8198778315457735210}
   - component: {fileID: 130233708585716593}
+  - component: {fileID: 5329780707776559949}
   m_Layer: 0
   m_Name: player
   m_TagString: Player
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2933560844402256781}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 24.6, y: 12.9, z: 0}
+  m_LocalPosition: {x: 26.44, y: 12.9, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -111,17 +111,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095695a6b3a9022429b4cc95d81cf44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 12
-  rb: {fileID: 3794715321433117371}
+  isPlayerOne: 1
+  animPerso1: {fileID: 9100000, guid: ca73a72311beabb4a947d490c7494463, type: 2}
+  animPerso2: {fileID: 9100000, guid: cb7e6b6bccfe8834295d4dca13b8fe10, type: 2}
+  speed: 10
+  jumpForce: 25
   groundCheck: {fileID: 6541797863381176073}
   groundCheckRadius: 0.2
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
   jumpBufferTime: 0.2
-  dashForce: 20
-  dashDuration: 0.2
+  dashForce: 35
+  dashDuration: 0.25
   dashCooldown: 1
   projectilePrefab: {fileID: 1112761263842588772, guid: 6c7c594d8070ad94785bb6fade09f0e8, type: 3}
   firePoint: {fileID: 1172957292537216011}
@@ -141,7 +143,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 4
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -160,7 +162,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2933560844402256781}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5530905df51b5f24d94b5816439e637f, type: 3}
   m_Name: 
@@ -168,21 +170,6 @@ MonoBehaviour:
   spriteRenderer: {fileID: 8150823991833283985}
   character1Sprite: {fileID: 1762443768893794021, guid: f5414444af703e8449cb752159288fd0, type: 3}
   character2Sprite: {fileID: -1545906628784265276, guid: f5414444af703e8449cb752159288fd0, type: 3}
---- !u!114 &6991730450889825884
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2933560844402256781}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b95c836d547b1e40a4d855ea8ad984d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerShoot
-  projectilePrefab: {fileID: 1112761263842588772, guid: 6c7c594d8070ad94785bb6fade09f0e8, type: 3}
-  firePoint: {fileID: 1172957292537216011}
-  projectileSpeed: 10
 --- !u!96 &6678861612766720214
 TrailRenderer:
   serializedVersion: 3
@@ -361,6 +348,19 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5329780707776559949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2933560844402256781}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72e0a06d9576dd744898e388e87323de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerDeath
+  exploisionPrefab: {fileID: 3880856777735946113, guid: 65e9887107f784442b35ae2a293e6c94, type: 3}
 --- !u!1 &5316037352422162130
 GameObject:
   m_ObjectHideFlags: 0
@@ -417,7 +417,7 @@ Transform:
   m_GameObject: {fileID: 8956085338108580976}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.19, y: 0.018, z: 0}
+  m_LocalPosition: {x: 0.134, y: 0.005, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

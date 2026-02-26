@@ -25,5 +25,11 @@ public class Projectile : MonoBehaviour
             Destroy(gameObject);
             Debug.Log(" toucher le mur");
         }
+
+        if (collision.CompareTag("Danger"))
+        {
+            Destroy(collision.gameObject);
+            Destroy(gameObject);
+        }
     }
 }
