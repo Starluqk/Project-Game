@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using System.Collections;
 
@@ -133,8 +134,9 @@ public class PlayerController : MonoBehaviour
         gravity.gravityScale = 0;
         rb.linearVelocity = lastDirection * dashForce;
         yield return new WaitForSeconds(dashDuration);
-        isDashing = false;
         gravity.gravityScale = gravitydefault;
+        isDashing = false;
+        
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
     }
@@ -146,5 +148,11 @@ public class PlayerController : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        Rigidbody2D gravity = GetComponent<Rigidbody2D>();
+        gravity.gravityScale =  gravitydefault;
     }
 }
