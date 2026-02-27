@@ -182,6 +182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Projectile
   lifeTime: 3
+  impactVFX: {fileID: 2952848081884439657, guid: a4eed47e727d1134cbf6290357a7017b, type: 3}
 --- !u!95 &-6998690288556075815
 Animator:
   serializedVersion: 7
