@@ -5,7 +5,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     [Header("Switch Personnage")]
-    public bool isPlayerOne = true; // True = Dash / False = Shoot
+    public bool isPlayerOne = true; 
     public RuntimeAnimatorController animPerso1;
     public RuntimeAnimatorController animPerso2;
 
@@ -44,14 +44,13 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        gravitydefault = GetComponent<Rigidbody2D>().gravityScale;
+        gravitydefault = rb.gravityScale;
         
         UpdateCharacterAppearance();
     }
 
     void Update()
     {
-        // 1. SWITCH DE PERSONNAGE (Touche Click droit)
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             isPlayerOne = !isPlayerOne;
@@ -60,23 +59,22 @@ public class PlayerController : MonoBehaviour
 
         if (isDashing) return;
 
-        // 2. RÉCUPÉRATION DES INPUTS
         moveInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
+        
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
         anim.SetBool("isGrounded", isGrounded);
 
-        // 3. ORIENTATION
         if (moveInput > 0) sr.flipX = false;
         else if (moveInput < 0) sr.flipX = true;
 
-        // Calcul de la direction (pour Dash ou Tir)
+        // Direction pour le TIR (garde la diagonale)
         if (moveInput != 0 || verticalInput != 0)
             lastDirection = new Vector2(moveInput, verticalInput).normalized;
         else
             lastDirection = new Vector2(sr.flipX ? -1f : 1f, 0);
 
-        // 4. SAUT
+        // SAUT
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, groundCheckRadius, groundLayer);
         if (Input.GetKeyDown(KeyCode.Space)) jumpBufferCounter = jumpBufferTime;
         else jumpBufferCounter -= Time.deltaTime;
@@ -87,13 +85,13 @@ public class PlayerController : MonoBehaviour
             jumpBufferCounter = 0f;
         }
 
-        // 5. DASH (RESTRINT AU JOUEUR 1)
+        // DASH (JOUEUR 1)
         if (Input.GetKeyDown(KeyCode.Mouse0) && canDash && isPlayerOne)
         {
-            StartCoroutine(Dash());
+            StartCoroutine(DashHorizontal());
         }
 
-        // 6. TIR (RESTRINT AU JOUEUR 2 - Touche F)
+        // TIR (JOUEUR 2)
         if (Input.GetKeyDown(KeyCode.Mouse0) && !isPlayerOne)
         {
             Shoot();
@@ -108,7 +106,6 @@ public class PlayerController : MonoBehaviour
 
     void UpdateCharacterAppearance()
     {
-        // Change l'animator selon le perso actif
         if (isPlayerOne && animPerso1 != null) anim.runtimeAnimatorController = animPerso1;
         else if (!isPlayerOne && animPerso2 != null) anim.runtimeAnimatorController = animPerso2;
     }
@@ -126,15 +123,26 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    IEnumerator Dash()
+    IEnumerator DashHorizontal()
     {
         canDash = false;
         isDashing = true;
-        Rigidbody2D gravity = GetComponent<Rigidbody2D>();
-        gravity.gravityScale = 0;
-        rb.linearVelocity = lastDirection * dashForce;
+        
+        rb.gravityScale = 0;
+
+        // --- FORCE LE DASH HORIZONTAL UNIQUEMENT ---
+        float horizontalDir = moveInput;
+        if (horizontalDir == 0) {
+            horizontalDir = sr.flipX ? -1f : 1f; // Dash vers où on regarde si pas d'input
+        }
+        
+        rb.linearVelocity = new Vector2(horizontalDir * dashForce, 0f);
+        // --------------------------------------------
+
         yield return new WaitForSeconds(dashDuration);
-        gravity.gravityScale = gravitydefault;
+        
+        rb.gravityScale = gravitydefault;
+        rb.linearVelocity = new Vector2(0, 0); // Stop le perso après le dash
         isDashing = false;
         
         yield return new WaitForSeconds(dashCooldown);
@@ -148,11 +156,5 @@ public class PlayerController : MonoBehaviour
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        Rigidbody2D gravity = GetComponent<Rigidbody2D>();
-        gravity.gravityScale =  gravitydefault;
     }
 }
