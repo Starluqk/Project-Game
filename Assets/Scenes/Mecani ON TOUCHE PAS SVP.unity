@@ -846,7 +846,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2726061141883055720, guid: a4eed47e727d1134cbf6290357a7017b, type: 3}
       propertyPath: looping
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2726061141883055720, guid: a4eed47e727d1134cbf6290357a7017b, type: 3}
       propertyPath: TrailModule.mode
