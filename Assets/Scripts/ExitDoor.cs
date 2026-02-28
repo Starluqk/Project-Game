@@ -47,7 +47,7 @@ public class ExitDoor : MonoBehaviour
         }
 
         // On attend que l'animation de la porte se termine
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(1.5f);
 
         // On change de niveau
         GameManager.NextLevel();

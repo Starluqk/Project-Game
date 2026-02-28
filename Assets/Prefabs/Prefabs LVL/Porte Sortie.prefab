@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4097952978259876624}
   - component: {fileID: 6874685190913730902}
   m_Layer: 0
-  m_Name: PorteSortieA
+  m_Name: Porte Sortie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
