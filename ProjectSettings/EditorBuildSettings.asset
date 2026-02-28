@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/Select Level.unity
     guid: 493de2732fc2bcc4d972791631283f8e
   - enabled: 1
-    path: Assets/Scenes/Bastien Level 1.unity
-    guid: 836f6a6150f8ea9468ba63b586b3f18c
+    path: Assets/Scenes/Level 1.unity
+    guid: 19231048f30d04849aba47cd69f30c93
   - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: 1c93bfe57f2ea174da486c4d72774dce

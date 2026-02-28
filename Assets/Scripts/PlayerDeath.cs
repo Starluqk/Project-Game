@@ -56,6 +56,6 @@ void Start()
     void ReloadScene()
     {
         // Recharge le niveau actuel
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        GameManager.ReloadScene();
     }
 }
