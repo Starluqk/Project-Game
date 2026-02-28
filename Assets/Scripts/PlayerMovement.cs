@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         gravitydefault = rb.gravityScale;
+        tr.emitting = false;
         
         UpdateCharacterAppearance();
     }
