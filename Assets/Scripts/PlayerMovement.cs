@@ -4,6 +4,10 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+    public int Stamina;
+    public int StaminaMax;
+    public int dashCost;
+    public int FireballCost;
     [Header("Switch Personnage")]
     public bool isPlayerOne = true; 
     public RuntimeAnimatorController animPerso1;
@@ -42,6 +46,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        Stamina = StaminaMax;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
@@ -52,6 +57,15 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (Stamina > StaminaMax)
+        {
+            Stamina = StaminaMax;
+        }
+        if (Stamina > 0)
+        {
+            Stamina = 0;
+        }
+        
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             isPlayerOne = !isPlayerOne;
