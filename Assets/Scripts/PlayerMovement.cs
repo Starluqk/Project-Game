@@ -61,7 +61,7 @@ public class PlayerController : MonoBehaviour
         {
             Stamina = StaminaMax;
         }
-        if (Stamina > 0)
+        if (Stamina < 0)
         {
             Stamina = 0;
         }
@@ -103,13 +103,21 @@ public class PlayerController : MonoBehaviour
         // DASH (JOUEUR 1)
         if (Input.GetKeyDown(KeyCode.Mouse0) && canDash && isPlayerOne)
         {
-            StartCoroutine(DashHorizontal());
+            if(Stamina - dashCost !> -1)
+            {
+                StartCoroutine(DashHorizontal());
+                Stamina = Stamina - dashCost;
+            }
         }
 
         // TIR (JOUEUR 2)
         if (Input.GetKeyDown(KeyCode.Mouse0) && !isPlayerOne)
         {
-            Shoot();
+            if (Stamina - FireballCost !> -1)
+            {
+                Shoot();
+                Stamina = Stamina - FireballCost;
+            }
         }
     }
 
