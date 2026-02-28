@@ -5,6 +5,7 @@ using System.Collections;
 public class PlayerController : MonoBehaviour
 {
     public int Stamina;
+    public static int StaminaDisplay;
     public int StaminaMax;
     public int dashCost;
     public int FireballCost;
@@ -46,6 +47,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        StaminaDisplay = Stamina;
         Stamina = StaminaMax;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
