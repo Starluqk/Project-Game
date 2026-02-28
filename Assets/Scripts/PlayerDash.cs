@@ -10,6 +10,7 @@ public class PlayerDash : MonoBehaviour
     public float dashCooldown = 1f;
 
     private Rigidbody2D rb;
+    [SerializeField] private TrailRenderer tr;
     private bool isDashing;
  
     private bool canDash;
@@ -38,7 +39,9 @@ public class PlayerDash : MonoBehaviour
        isDashing = true;
        float direction = transform.localScale.x;
        rb.linearVelocity = new Vector2(direction*dashForce,0);
+       tr.emitting = true;
        yield return new WaitForSeconds(dashDuration);
+       tr.emitting = false;
        isDashing = false;
        yield return new WaitForSeconds(dashCooldown);
        canDash = true;

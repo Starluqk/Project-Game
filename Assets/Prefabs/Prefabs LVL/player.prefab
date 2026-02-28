@@ -187,6 +187,7 @@ MonoBehaviour:
   dashForce: 20.6
   dashDuration: 0.25
   dashCooldown: 1
+  tr: {fileID: 682425834431934843}
   projectilePrefab: {fileID: 1112761263842588772, guid: 6c7c594d8070ad94785bb6fade09f0e8, type: 3}
   firePoint: {fileID: 9129400005396942579}
   projectileSpeed: 15
@@ -297,13 +298,40 @@ TrailRenderer:
         weightedMode: 0
         inWeight: 0.33333334
         outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.30704826
+        value: 0.59555215
+        inSlope: -0.6027624
+        outSlope: -0.6027624
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.45318058
+        value: 0.24402148
+        inSlope: -1.0940151
+        outSlope: -1.0940151
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 1, g: 0.65274584, b: 0.035848916, a: 1}
-      key1: {r: 1, g: 0.65274584, b: 0.035848916, a: 1}
+      key0: {r: 0.9811321, g: 0.91170055, b: 0.77441555, a: 1}
+      key1: {r: 1, g: 1, b: 1, a: 0.5058824}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
       key4: {r: 0, g: 0, b: 0, a: 0}
@@ -311,7 +339,7 @@ TrailRenderer:
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
       ctime0: 0
-      ctime1: 1002
+      ctime1: 65535
       ctime2: 0
       ctime3: 0
       ctime4: 0
@@ -319,7 +347,7 @@ TrailRenderer:
       ctime6: 0
       ctime7: 0
       atime0: 0
-      atime1: 65535
+      atime1: 64767
       atime2: 0
       atime3: 0
       atime4: 0
@@ -327,7 +355,7 @@ TrailRenderer:
       atime6: 0
       atime7: 0
       m_Mode: 0
-      m_ColorSpace: -1
+      m_ColorSpace: 0
       m_NumColorKeys: 2
       m_NumAlphaKeys: 2
     numCornerVertices: 0
@@ -340,7 +368,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_MaskInteraction: 0
   m_Autodestruct: 0
-  m_Emitting: 0
+  m_Emitting: 1
   m_ApplyActiveColorSpace: 1
 --- !u!61 &1145684949291291295
 BoxCollider2D:

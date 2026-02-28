@@ -32,6 +32,7 @@ public class PlayerController : MonoBehaviour
     private bool isDashing = false;
     private bool canDash = true;
     private float gravitydefault;
+    [SerializeField] private TrailRenderer tr;
 
     [Header("Système de Tir (Perso 2 uniquement)")]
     public GameObject projectilePrefab;
@@ -138,9 +139,9 @@ public class PlayerController : MonoBehaviour
         
         rb.linearVelocity = new Vector2(horizontalDir * dashForce, 0f);
         // --------------------------------------------
-
+        tr.emitting = true;
         yield return new WaitForSeconds(dashDuration);
-        
+        tr.emitting = false;
         rb.gravityScale = gravitydefault;
         rb.linearVelocity = new Vector2(0, 0); // Stop le perso après le dash
         isDashing = false;
