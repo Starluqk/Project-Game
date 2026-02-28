@@ -17,11 +17,20 @@ public class ExitDoor : MonoBehaviour
         // On vérifie si c'est le joueur ET qu'on n'a pas déjà activé la porte
         if (collision.CompareTag("Player") && !aEteTouchee)
         {
-            aEteTouchee = true;
-            Debug.Log("Niveau terminé ! Le joueur entre dans la porte.");
-            
-            // On lance la coroutine en lui passant l'objet du joueur
-            StartCoroutine(SequenceSortie(collision.gameObject));
+            if (GameManager.currentLevel <= 5 || GameManager.hasKey)
+            {
+
+
+                aEteTouchee = true;
+                Debug.Log("Niveau terminé ! Le joueur entre dans la porte.");
+
+                // On lance la coroutine en lui passant l'objet du joueur
+                StartCoroutine(SequenceSortie(collision.gameObject));
+            }
+            else
+            {
+                Debug.Log("besoin de cle");
+            }
         }
     }
 

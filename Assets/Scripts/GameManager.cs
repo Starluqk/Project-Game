@@ -6,6 +6,7 @@ public static class GameManager
 {
     public static int NbLevels = 10;
     public static int currentLevel = 1;
+    public static bool hasKey = false;
 
     public static void ClickLevel(string level)
     {
@@ -29,6 +30,7 @@ public static class GameManager
     {
         if (currentLevel < NbLevels)
         {
+            hasKey = false;
             currentLevel++;
             SceneManager.LoadScene("Level " + currentLevel.ToString());
             ShowLevelNumber();

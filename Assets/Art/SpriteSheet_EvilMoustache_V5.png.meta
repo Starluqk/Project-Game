@@ -1,0 +1,819 @@
+fileFormatVersion: 2
+guid: 1143af6b75997764aadd141b83a8ec49
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5917807787417202591
+    second: SpriteSheet_EvilMoustache_V5_0
+  - first:
+      213: -2137901093079132941
+    second: SpriteSheet_EvilMoustache_V5_1
+  - first:
+      213: -4045142447633809831
+    second: SpriteSheet_EvilMoustache_V5_2
+  - first:
+      213: 5097760392242349293
+    second: SpriteSheet_EvilMoustache_V5_3
+  - first:
+      213: 602983066324715415
+    second: SpriteSheet_EvilMoustache_V5_4
+  - first:
+      213: 8331568294442102643
+    second: SpriteSheet_EvilMoustache_V5_5
+  - first:
+      213: -3236149739785214954
+    second: SpriteSheet_EvilMoustache_V5_6
+  - first:
+      213: 5332703430423169953
+    second: SpriteSheet_EvilMoustache_V5_7
+  - first:
+      213: -1451797197290838303
+    second: SpriteSheet_EvilMoustache_V5_8
+  - first:
+      213: 8765801846319339553
+    second: SpriteSheet_EvilMoustache_V5_9
+  - first:
+      213: 5233358655928095938
+    second: SpriteSheet_EvilMoustache_V5_10
+  - first:
+      213: 1496958762614387977
+    second: SpriteSheet_EvilMoustache_V5_11
+  - first:
+      213: -6120461355925429986
+    second: SpriteSheet_EvilMoustache_V5_12
+  - first:
+      213: 6869453919126706692
+    second: SpriteSheet_EvilMoustache_V5_13
+  - first:
+      213: 6657479735579527889
+    second: SpriteSheet_EvilMoustache_V5_14
+  - first:
+      213: -5047700859610288997
+    second: SpriteSheet_EvilMoustache_V5_15
+  - first:
+      213: 5277579973007435216
+    second: SpriteSheet_EvilMoustache_V5_16
+  - first:
+      213: 7827772324010645677
+    second: SpriteSheet_EvilMoustache_V5_17
+  - first:
+      213: -5084363789192760365
+    second: SpriteSheet_EvilMoustache_V5_18
+  - first:
+      213: 1658286003503752134
+    second: SpriteSheet_EvilMoustache_V5_19
+  - first:
+      213: 3632539230107869773
+    second: SpriteSheet_EvilMoustache_V5_20
+  - first:
+      213: -5650278917221047377
+    second: SpriteSheet_EvilMoustache_V5_21
+  - first:
+      213: 3170930258171740062
+    second: SpriteSheet_EvilMoustache_V5_22
+  - first:
+      213: -3885574759928540061
+    second: SpriteSheet_EvilMoustache_V5_23
+  - first:
+      213: 4990332115965825207
+    second: SpriteSheet_EvilMoustache_V5_24
+  - first:
+      213: 1545857886488966632
+    second: SpriteSheet_EvilMoustache_V5_25
+  - first:
+      213: -7020886129551501209
+    second: SpriteSheet_EvilMoustache_V5_26
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 219
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f9fea0a24d6402250800000000000000
+      internalID: 5917807787417202591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_1
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 219
+        width: 36
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f4591e6846a452e0800000000000000
+      internalID: -2137901093079132941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_2
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 219
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 95ebeee3064ccd7c0800000000000000
+      internalID: -4045142447633809831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_3
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 222
+        width: 37
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: de449a15112eeb640800000000000000
+      internalID: 5097760392242349293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_4
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 234
+        width: 19
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7974cd177e93e5800800000000000000
+      internalID: 602983066324715415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_5
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 230
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 37fe024a83daf9370800000000000000
+      internalID: 8331568294442102643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_6
+      rect:
+        serializedVersion: 2
+        x: 195
+        y: 230
+        width: 25
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 614212025f2e613d0800000000000000
+      internalID: -3236149739785214954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_7
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 230
+        width: 28
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ab41ee1481910a40800000000000000
+      internalID: 5332703430423169953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_8
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 192
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e66299142e2adbe0800000000000000
+      internalID: -1451797197290838303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_9
+      rect:
+        serializedVersion: 2
+        x: 30
+        y: 192
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 128d355065266a970800000000000000
+      internalID: 8765801846319339553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 192
+        width: 26
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c45fc458ff90a840800000000000000
+      internalID: 5233358655928095938
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_11
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 192
+        width: 28
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 905f909301446c410800000000000000
+      internalID: 1496958762614387977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_12
+      rect:
+        serializedVersion: 2
+        x: 117
+        y: 192
+        width: 29
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e112f8a03d0cf0ba0800000000000000
+      internalID: -6120461355925429986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_13
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 192
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40a567a81f3355f50800000000000000
+      internalID: 6869453919126706692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_14
+      rect:
+        serializedVersion: 2
+        x: 175
+        y: 192
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1da4492fb8e146c50800000000000000
+      internalID: 6657479735579527889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_15
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 192
+        width: 33
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9cae72efc6f2f9b0800000000000000
+      internalID: -5047700859610288997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_16
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 144
+        width: 29
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0d5e2dc060bbd3940800000000000000
+      internalID: 5277579973007435216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_17
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 144
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da8d9439475d1ac60800000000000000
+      internalID: 7827772324010645677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_18
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 154
+        width: 33
+        height: 26
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3d37e446216b079b0800000000000000
+      internalID: -5084363789192760365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_19
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 144
+        width: 39
+        height: 44
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c3e7de855a630710800000000000000
+      internalID: 1658286003503752134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_20
+      rect:
+        serializedVersion: 2
+        x: 143
+        y: 148
+        width: 41
+        height: 40
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d42204b0f2f596230800000000000000
+      internalID: 3632539230107869773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_21
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 169
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa32921e24d2691b0800000000000000
+      internalID: -5650278917221047377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_22
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 149
+        width: 30
+        height: 17
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9f3dddf448610c20800000000000000
+      internalID: 3170930258171740062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_23
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 107
+        width: 25
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3645c3ea75aa31ac0800000000000000
+      internalID: -3885574759928540061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_24
+      rect:
+        serializedVersion: 2
+        x: 31
+        y: 107
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b0dd5b9e98314540800000000000000
+      internalID: 4990332115965825207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_25
+      rect:
+        serializedVersion: 2
+        x: 62
+        y: 107
+        width: 28
+        height: 37
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e53965be8df37510800000000000000
+      internalID: 1545857886488966632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheet_EvilMoustache_V5_26
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 107
+        width: 35
+        height: 41
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7689d9f634dc09e90800000000000000
+      internalID: -7020886129551501209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 21e517a089ad8fc40b83d1925d1a8385
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SpriteSheet_EvilMoustache_V5_0: 5917807787417202591
+      SpriteSheet_EvilMoustache_V5_1: -2137901093079132941
+      SpriteSheet_EvilMoustache_V5_10: 5233358655928095938
+      SpriteSheet_EvilMoustache_V5_11: 1496958762614387977
+      SpriteSheet_EvilMoustache_V5_12: -6120461355925429986
+      SpriteSheet_EvilMoustache_V5_13: 6869453919126706692
+      SpriteSheet_EvilMoustache_V5_14: 6657479735579527889
+      SpriteSheet_EvilMoustache_V5_15: -5047700859610288997
+      SpriteSheet_EvilMoustache_V5_16: 5277579973007435216
+      SpriteSheet_EvilMoustache_V5_17: 7827772324010645677
+      SpriteSheet_EvilMoustache_V5_18: -5084363789192760365
+      SpriteSheet_EvilMoustache_V5_19: 1658286003503752134
+      SpriteSheet_EvilMoustache_V5_2: -4045142447633809831
+      SpriteSheet_EvilMoustache_V5_20: 3632539230107869773
+      SpriteSheet_EvilMoustache_V5_21: -5650278917221047377
+      SpriteSheet_EvilMoustache_V5_22: 3170930258171740062
+      SpriteSheet_EvilMoustache_V5_23: -3885574759928540061
+      SpriteSheet_EvilMoustache_V5_24: 4990332115965825207
+      SpriteSheet_EvilMoustache_V5_25: 1545857886488966632
+      SpriteSheet_EvilMoustache_V5_26: -7020886129551501209
+      SpriteSheet_EvilMoustache_V5_3: 5097760392242349293
+      SpriteSheet_EvilMoustache_V5_4: 602983066324715415
+      SpriteSheet_EvilMoustache_V5_5: 8331568294442102643
+      SpriteSheet_EvilMoustache_V5_6: -3236149739785214954
+      SpriteSheet_EvilMoustache_V5_7: 5332703430423169953
+      SpriteSheet_EvilMoustache_V5_8: -1451797197290838303
+      SpriteSheet_EvilMoustache_V5_9: 8765801846319339553
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
