@@ -1,11 +1,13 @@
 using UnityEngine;
 
 public enum AudioType
-{
-    jump,
+{ 
     death,
-    dash,
-    fireball,
+    ennemieDeath,
+    fireballLaunch,
+    fireballWallHit,
+    levelEnd,
+    jump,
 }
 
 public enum AudioSourceType
@@ -40,7 +42,7 @@ public class AudioManager : MonoBehaviour
         playerSource.volume = volume;
     }
 
-    void PlaySound(AudioType type, AudioSourceType sourceType)
+    public void PlaySound(AudioType type, AudioSourceType sourceType)
     {
         AudioClip clip = getClip(type);
         if (sourceType == AudioSourceType.game)
