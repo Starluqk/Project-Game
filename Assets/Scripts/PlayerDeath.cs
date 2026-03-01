@@ -16,7 +16,7 @@ void Start()
     // Détection pour les objets solides (Ennemis, Pics au sol)
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Danger"))
+        if (collision.gameObject.CompareTag("Danger") ||collision.gameObject.CompareTag("Ennemie"))
         {
             Mourir();
         }

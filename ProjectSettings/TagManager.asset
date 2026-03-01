@@ -5,9 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - MurDestructble
-  - Ennemi
   - Ground
   - Danger
+  - Ennemie
   layers:
   - Default
   - TransparentFX
