@@ -10,6 +10,6 @@ public class UIManager : MonoBehaviour
     {
      int cout = GameManager.dashCost;
      int nbActions = PlayerController.StaminaDisplay / cout;
-     actionsText.text = " Action : x " + nbActions.ToString();
+     actionsText.text = " Action left : " + nbActions.ToString();
     }
 }

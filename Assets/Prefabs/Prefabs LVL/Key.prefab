@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyItem
   pickUpEffect: {fileID: 3880856777735946113, guid: 65e9887107f784442b35ae2a293e6c94, type: 3}
+  murADetruire: {fileID: 0}
 --- !u!58 &8208138995437620937
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -163,4 +164,4 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: -0.0054269317, y: -0.0032686235}
-  m_Radius: 0.13030834
+  m_Radius: 0.06
