@@ -1,4 +1,5 @@
 using System.Linq;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,6 +8,10 @@ public static class GameManager
     public static int NbLevels = 10;
     public static int currentLevel = 1;
     public static bool hasKey = false;
+
+    // --- NOUVELLES VARIABLES DE COÛT ---
+    public static int dashCost = 25;
+    public static int fireballCost = 20;
 
     public static void ClickLevel(string level)
     {
@@ -17,6 +22,7 @@ public static class GameManager
 
     public static void PlayButton()
     {
+        currentLevel = 1; // On reset au niveau 1
         SceneManager.LoadScene("Level 1");
     }
 
@@ -39,12 +45,11 @@ public static class GameManager
     
     public static void ReloadScene()
     {
-        // Recharge le niveau actuel
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public static void ShowLevelNumber()
     {
-        Debug.Log(currentLevel);
+        Debug.Log("Niveau actuel : " + currentLevel);
     }
 }

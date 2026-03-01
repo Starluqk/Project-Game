@@ -4,11 +4,11 @@ using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
+    [Header("Énergie")]
     public int Stamina;
     public static int StaminaDisplay;
-    public int StaminaMax;
-    public int dashCost;
-    public int FireballCost;
+    public int StaminaMax = 100;
+
     [Header("Switch Personnage")]
     public bool isPlayerOne = true; 
     public RuntimeAnimatorController animPerso1;
@@ -47,28 +47,24 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        StaminaDisplay = Stamina;
         Stamina = StaminaMax;
+        StaminaDisplay = Stamina;
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
         gravitydefault = rb.gravityScale;
-        tr.emitting = false;
+        if (tr != null) tr.emitting = false;
         
         UpdateCharacterAppearance();
     }
 
     void Update()
     {
-        if (Stamina > StaminaMax)
-        {
-            Stamina = StaminaMax;
-        }
-        if (Stamina < 0)
-        {
-            Stamina = 0;
-        }
+        // Mise à jour de l'affichage UI
+        StaminaDisplay = Stamina;
+        Stamina = Mathf.Clamp(Stamina, 0, StaminaMax);
         
+        // SWITCH PERSO (Clic Droit)
         if (Input.GetKeyDown(KeyCode.Mouse1))
         {
             isPlayerOne = !isPlayerOne;
@@ -86,7 +82,7 @@ public class PlayerController : MonoBehaviour
         if (moveInput > 0) sr.flipX = false;
         else if (moveInput < 0) sr.flipX = true;
 
-        // Direction pour le TIR (garde la diagonale)
+        // Direction Tir
         if (moveInput != 0 || verticalInput != 0)
             lastDirection = new Vector2(moveInput, verticalInput).normalized;
         else
@@ -103,23 +99,26 @@ public class PlayerController : MonoBehaviour
             jumpBufferCounter = 0f;
         }
 
-        // DASH (JOUEUR 1)
-        if (Input.GetKeyDown(KeyCode.Mouse0) && canDash && isPlayerOne)
+        // --- ACTIONS (Clic Gauche) ---
+        if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if(Stamina - dashCost !> -1)
+            // DASH (Perso 1)
+            if (isPlayerOne && canDash)
             {
-                StartCoroutine(DashHorizontal());
-                Stamina = Stamina - dashCost;
+                if (Stamina >= GameManager.dashCost) // Utilise la valeur du GameManager
+                {
+                    Stamina -= GameManager.dashCost;
+                    StartCoroutine(DashHorizontal());
+                }
             }
-        }
-
-        // TIR (JOUEUR 2)
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !isPlayerOne)
-        {
-            if (Stamina - FireballCost !> -1)
+            // TIR (Perso 2)
+            else if (!isPlayerOne)
             {
-                Shoot();
-                Stamina = Stamina - FireballCost;
+                if (Stamina >= GameManager.fireballCost) // Utilise la valeur du GameManager
+                {
+                    Stamina -= GameManager.fireballCost;
+                    Shoot();
+                }
             }
         }
     }
@@ -140,7 +139,6 @@ public class PlayerController : MonoBehaviour
     {
         GameObject projectile = Instantiate(projectilePrefab, firePoint.position, Quaternion.identity);
         Rigidbody2D projRb = projectile.GetComponent<Rigidbody2D>();
-
         if (projRb != null)
         {
             projRb.linearVelocity = lastDirection * projectileSpeed;
@@ -153,34 +151,16 @@ public class PlayerController : MonoBehaviour
     {
         canDash = false;
         isDashing = true;
-        
         rb.gravityScale = 0;
-
-        // --- FORCE LE DASH HORIZONTAL UNIQUEMENT ---
-        float horizontalDir = moveInput;
-        if (horizontalDir == 0) {
-            horizontalDir = sr.flipX ? -1f : 1f; // Dash vers où on regarde si pas d'input
-        }
-        
+        float horizontalDir = moveInput != 0 ? moveInput : (sr.flipX ? -1f : 1f);
         rb.linearVelocity = new Vector2(horizontalDir * dashForce, 0f);
-        // --------------------------------------------
-        tr.emitting = true;
+        if (tr != null) tr.emitting = true;
         yield return new WaitForSeconds(dashDuration);
-        tr.emitting = false;
+        if (tr != null) tr.emitting = false;
         rb.gravityScale = gravitydefault;
-        rb.linearVelocity = new Vector2(0, 0); // Stop le perso après le dash
+        rb.linearVelocity = Vector2.zero;
         isDashing = false;
-        
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (groundCheck != null)
-        {
-            Gizmos.color = Color.red;
-            Gizmos.DrawWireSphere(groundCheck.position, groundCheckRadius);
-        }
     }
 }
