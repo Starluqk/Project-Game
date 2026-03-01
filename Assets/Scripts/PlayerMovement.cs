@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
         // Mise à jour de l'affichage UI
         StaminaDisplay = Stamina;
         Stamina = Mathf.Clamp(Stamina, 0, StaminaMax);
+        int coutActuel = GameManager.dashCost;
+        int actionsRestantes = Stamina / coutActuel;
         
         // SWITCH PERSO (Clic Droit)
         if (Input.GetKeyDown(KeyCode.Mouse1))
