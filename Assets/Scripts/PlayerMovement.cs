@@ -99,6 +99,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpBufferCounter = 0f;
+            AudioManager.Instance.PlaySound(AudioType.jump, AudioSourceType.player);
         }
 
         // --- ACTIONS (Clic Gauche) ---
@@ -120,6 +121,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Stamina -= GameManager.fireballCost;
                     Shoot();
+                    AudioManager.Instance.PlaySound(AudioType.fireballLaunch, AudioSourceType.player);
                 }
             }
         }
