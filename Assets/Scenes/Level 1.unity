@@ -35665,6 +35665,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3451268535975799306, guid: 378e3ade2ec952b4182218fb5b087c92, type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876564349119909203, guid: 378e3ade2ec952b4182218fb5b087c92, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876564349119909203, guid: 378e3ade2ec952b4182218fb5b087c92, type: 3}
+      propertyPath: m_ReferenceResolution.x
+      value: 1920
+      objectReference: {fileID: 0}
+    - target: {fileID: 5876564349119909203, guid: 378e3ade2ec952b4182218fb5b087c92, type: 3}
+      propertyPath: m_ReferenceResolution.y
+      value: 1080
+      objectReference: {fileID: 0}
     - target: {fileID: 8048027960467571977, guid: 378e3ade2ec952b4182218fb5b087c92, type: 3}
       propertyPath: m_Name
       value: action compteur
