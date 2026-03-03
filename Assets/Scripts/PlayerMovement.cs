@@ -112,6 +112,7 @@ public class PlayerController : MonoBehaviour
                 {
                     Stamina -= GameManager.dashCost;
                     StartCoroutine(DashHorizontal());
+                    AudioManager.Instance.PlaySound(AudioType.dash, AudioSourceType.player);
                 }
             }
             // TIR (Perso 2)

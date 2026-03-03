@@ -19,7 +19,6 @@ public class PlayerClassChanger : MonoBehaviour
         // Appuie sur E pour changer de personnage
         if (Input.GetKeyDown(KeyCode.E))
         {
-            AudioManager.Instance.PlaySound(AudioType.transformation, AudioSourceType.player);
             SwitchCharacter();
         }
     }
@@ -38,5 +37,6 @@ public class PlayerClassChanger : MonoBehaviour
             isCharacter1 = true;
 
         }
+        AudioManager.Instance.PlaySound(AudioType.transformation, AudioSourceType.player);
     }
 }
