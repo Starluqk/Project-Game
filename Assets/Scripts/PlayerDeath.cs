@@ -31,7 +31,7 @@ void Start()
         }
     }
 
-    void Mourir()
+    public void Mourir()
     {
         if (estMort) return; // Évite de mourir plusieurs fois d'un coup
 
@@ -46,7 +46,7 @@ void Start()
         {
             Instantiate(exploisionPrefab, transform.position, Quaternion.identity);
         }
-        sr.enabled = false;
+        //sr.enabled = false;
         rb.simulated = false;
 
         // 4. On attend 1 seconde avant de recharger 
@@ -56,6 +56,7 @@ void Start()
     void ReloadScene()
     {
         // Recharge le niveau actuel
+        Debug.Log("Reload de la scène ! Opa");
         GameManager.ReloadScene();
     }
 }
