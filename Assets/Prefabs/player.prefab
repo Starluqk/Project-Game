@@ -111,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 095695a6b3a9022429b4cc95d81cf44b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Stamina: 0
+  StaminaMax: 100
   isPlayerOne: 1
   animPerso1: {fileID: 9100000, guid: ca73a72311beabb4a947d490c7494463, type: 2}
   animPerso2: {fileID: 9100000, guid: cb7e6b6bccfe8834295d4dca13b8fe10, type: 2}
@@ -418,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 8956085338108580976}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.134, y: 0.105, z: 0}
+  m_LocalPosition: {x: -0.014, y: 0.105, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
