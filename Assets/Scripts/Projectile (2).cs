@@ -23,6 +23,7 @@ public class Projectile : MonoBehaviour
             }
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            AudioManager.Instance.PlaySound(AudioType.fireballWallBreak, AudioSourceType.game);
         }
 
         // 2. GROUND (On détruit juste le projectile)

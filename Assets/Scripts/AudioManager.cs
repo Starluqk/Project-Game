@@ -10,13 +10,15 @@ public enum AudioType
     jump,
     transformation,
     dash,
-    
+    fireballWallBreak,
+    music
 }
 
 public enum AudioSourceType
 {
     game,
     player,
+    music
 }
 public class AudioManager : MonoBehaviour
 {
@@ -24,6 +26,7 @@ public class AudioManager : MonoBehaviour
     public float volume = 1f;
     public AudioSource gameSource;
     public AudioSource playerSource;
+    public AudioSource musicSource;
 
     [System.Serializable]
     public struct AudioData
@@ -43,6 +46,7 @@ public class AudioManager : MonoBehaviour
     {
         gameSource.volume = volume;
         playerSource.volume = volume;
+        musicSource.volume = volume;
     }
 
     public void PlaySound(AudioType type, AudioSourceType sourceType)
