@@ -60,7 +60,7 @@ public static class GameManager
 
     public static void EchapMenu()
     {
-        if (alreadyLoad)
+        if (!alreadyLoad)
         {
             Time.timeScale = 0;
             alreadyLoad = true;
