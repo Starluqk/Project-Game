@@ -5,8 +5,8 @@ public class PlayerDeath : MonoBehaviour
 {
     public GameObject exploisionPrefab;
     private bool estMort = false;
-    private SpriteRenderer sr;
-private Rigidbody2D rb;
+    [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private Rigidbody2D rb;
 
 void Start()
 {
@@ -37,6 +37,18 @@ void Start()
     {
         if (estMort) return; // Évite de mourir plusieurs fois d'un coup
 
+        actionOnRestart();
+    }
+
+    void ReloadScene()
+    {
+        // Recharge le niveau actuel
+        Debug.Log("Reload de la scène ! Opa");
+        GameManager.ReloadScene();
+    }
+
+    public void actionOnRestart()
+    {
         estMort = true;
         Debug.Log("Mort ! Rechargement...");
 
@@ -48,17 +60,10 @@ void Start()
         {
             Instantiate(exploisionPrefab, transform.position, Quaternion.identity);
         }
-        //sr.enabled = false;
+        sr.enabled = false;
         rb.simulated = false;
 
         // 4. On attend 1 seconde avant de recharger 
         Invoke("ReloadScene", 1f);
-    }
-
-    void ReloadScene()
-    {
-        // Recharge le niveau actuel
-        Debug.Log("Reload de la scène ! Opa");
-        GameManager.ReloadScene();
     }
 }

@@ -383,7 +383,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8210107428246490559, guid: 5bf670a1771ffba4eb7568eda0dc2fbf, type: 3}
         m_TargetAssemblyTypeName: PlayerDeath, Assembly-CSharp
-        m_MethodName: Mourir
+        m_MethodName: actionOnRestart
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
