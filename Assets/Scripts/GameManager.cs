@@ -49,6 +49,7 @@ public static class GameManager
     
     public static void ReloadScene()
     {
+        alreadyLoad = false;
         Time.timeScale = 1f;
         nbDeath++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -72,6 +73,7 @@ public static class GameManager
 
     public static void BackToMainMenu()
     {
+        alreadyLoad = false;
         Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
