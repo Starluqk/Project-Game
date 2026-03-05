@@ -61,8 +61,7 @@ void Start()
         {
             Instantiate(exploisionPrefab, transform.position, Quaternion.identity);
         }
-        sr.enabled = false;
-        rb.simulated = false;
+        Destroy(GameObject.FindGameObjectWithTag("Player"));
 
         // 4. On attend 1 seconde avant de recharger 
         Invoke("ReloadScene", 1f);
