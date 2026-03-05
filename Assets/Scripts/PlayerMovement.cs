@@ -103,7 +103,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // --- ACTIONS (Clic Gauche) ---
-        if (Input.GetKeyDown(KeyCode.Mouse0))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.alreadyLoad)
         {
             // DASH (Perso 1)
             if (isPlayerOne && canDash)

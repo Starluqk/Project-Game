@@ -61,9 +61,9 @@ void Start()
         {
             Instantiate(exploisionPrefab, transform.position, Quaternion.identity);
         }
-        sr.enabled = false;
-        rb.simulated = false;
-
+        GetComponent<SpriteRenderer>().enabled = false;
+        enabled = false;
+        
         // 4. On attend 1 seconde avant de recharger 
         Invoke("ReloadScene", 1f);
     }

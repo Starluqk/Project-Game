@@ -47,7 +47,7 @@ public class ExitDoor : MonoBehaviour
         // On désactive le SpriteRenderer (le visuel)
         if (player.TryGetComponent<SpriteRenderer>(out SpriteRenderer sr))
         {
-            sr.enabled = false;
+            Destroy(GameObject.FindGameObjectWithTag("Player"));
         }
 
         // 3. On bloque la physique du joueur pour qu'il ne tombe pas ou ne bouge plus
