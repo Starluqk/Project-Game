@@ -4,6 +4,7 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
    public TextMeshProUGUI actionsText;
+   public TextMeshProUGUI numberDeathLabell;
 
     // Update is called once per frame
     void Update()
@@ -11,5 +12,7 @@ public class UIManager : MonoBehaviour
      int cout = GameManager.dashCost;
      int nbActions = PlayerController.StaminaDisplay / cout;
      actionsText.text = " Action left : " + nbActions.ToString();
+
+     numberDeathLabell.text = GameManager.nbDeath.ToString();
     }
 }

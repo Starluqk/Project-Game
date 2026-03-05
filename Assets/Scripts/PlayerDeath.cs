@@ -43,7 +43,8 @@ void Start()
     void ReloadScene()
     {
         // Recharge le niveau actuel
-        Debug.Log("Reload de la scène ! Opa");
+        
+        
         GameManager.ReloadScene();
     }
 

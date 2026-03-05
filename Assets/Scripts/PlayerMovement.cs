@@ -126,6 +126,11 @@ public class PlayerController : MonoBehaviour
                 }
             }
         }
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            GameManager.EchapMenu();
+        }
     }
 
     void FixedUpdate()

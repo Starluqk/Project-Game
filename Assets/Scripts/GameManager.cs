@@ -12,6 +12,9 @@ public static class GameManager
     // --- NOUVELLES VARIABLES DE COÛT ---
     public static int dashCost = 25;
     public static int fireballCost = 20;
+    
+    // Variable nombre mort
+    public static int nbDeath = 0;
 
     public static void ClickLevel(string level)
     {
@@ -45,11 +48,27 @@ public static class GameManager
     
     public static void ReloadScene()
     {
+        nbDeath++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public static void ShowLevelNumber()
     {
         Debug.Log("Niveau actuel : " + currentLevel);
+    }
+
+    public static void EchapMenu()
+    {
+        SceneManager.LoadScene("Echap Menu", LoadSceneMode.Additive);
+    }
+
+    public static void BackToMainMenu()
+    {
+        SceneManager.LoadScene("Main Menu");
+    }
+
+    public static void CloseMenu()
+    {
+        SceneManager.UnloadSceneAsync("Echap Menu");
     }
 }
