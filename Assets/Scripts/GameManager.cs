@@ -49,6 +49,7 @@ public static class GameManager
     
     public static void ReloadScene()
     {
+        Time.timeScale = 1f;
         nbDeath++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
