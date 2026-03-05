@@ -61,8 +61,9 @@ void Start()
         {
             Instantiate(exploisionPrefab, transform.position, Quaternion.identity);
         }
-        Destroy(GameObject.FindGameObjectWithTag("Player"));
-
+        GetComponent<SpriteRenderer>().enabled = false;
+        enabled = false;
+        
         // 4. On attend 1 seconde avant de recharger 
         Invoke("ReloadScene", 1f);
     }
