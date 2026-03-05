@@ -71,4 +71,5 @@ public static class GameManager
     {
         SceneManager.UnloadSceneAsync("Echap Menu");
     }
+    
 }
