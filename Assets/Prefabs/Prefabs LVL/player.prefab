@@ -279,7 +279,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5379455304447327245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -337,7 +337,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5379455304447327245}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 095695a6b3a9022429b4cc95d81cf44b, type: 3}
   m_Name: 
@@ -357,7 +357,7 @@ MonoBehaviour:
   jumpBufferTime: 0.2
   dashForce: 20.6
   dashDuration: 0.25
-  dashCooldown: 1
+  dashCooldown: 0.4
   tr: {fileID: 8503425955003935570}
   projectilePrefab: {fileID: 1112761263842588772, guid: 6c7c594d8070ad94785bb6fade09f0e8, type: 3}
   firePoint: {fileID: 9129400005396942579}
@@ -371,7 +371,7 @@ Rigidbody2D:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5379455304447327245}
   m_BodyType: 0
-  m_Simulated: 0
+  m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1

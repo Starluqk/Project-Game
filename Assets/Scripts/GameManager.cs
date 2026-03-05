@@ -8,6 +8,7 @@ public static class GameManager
     public static int NbLevels = 10;
     public static int currentLevel = 1;
     public static bool hasKey = false;
+    public static bool alreadyLoad = false;
 
     // --- NOUVELLES VARIABLES DE COÛT ---
     public static int dashCost = 25;
@@ -59,16 +60,25 @@ public static class GameManager
 
     public static void EchapMenu()
     {
-        SceneManager.LoadScene("Echap Menu", LoadSceneMode.Additive);
+        if (alreadyLoad)
+        {
+            Time.timeScale = 0;
+            alreadyLoad = true;
+            SceneManager.LoadScene("Echap Menu", LoadSceneMode.Additive);
+        }
+        
     }
 
     public static void BackToMainMenu()
     {
+        Time.timeScale = 1;
         SceneManager.LoadScene("Main Menu");
     }
 
     public static void CloseMenu()
     {
+        Time.timeScale = 1;
+        alreadyLoad = false;
         SceneManager.UnloadSceneAsync("Echap Menu");
     }
 }
