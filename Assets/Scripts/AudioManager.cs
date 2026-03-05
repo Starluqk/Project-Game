@@ -8,6 +8,9 @@ public enum AudioType
     fireballWallHit,
     levelEnd,
     jump,
+    transformation,
+    dash,
+    
 }
 
 public enum AudioSourceType

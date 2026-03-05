@@ -54,7 +54,7 @@ MonoBehaviour:
     type: 0
   - clip: {fileID: 8300000, guid: 5f05d8913349ae94a8097950a575cad5, type: 3}
     type: 1
-  - clip: {fileID: 8300000, guid: bd3b504936ec6d64eb63a5a93cff07be, type: 3}
+  - clip: {fileID: 8300000, guid: 5322f93019f6e1e49a30a3f2cef57a22, type: 3}
     type: 2
   - clip: {fileID: 8300000, guid: f3c1c6ecc1d3809428379fc47c203f80, type: 3}
     type: 3
@@ -62,6 +62,10 @@ MonoBehaviour:
     type: 4
   - clip: {fileID: 8300000, guid: 02d1cca26af3c7a4497fd9d0cc183abc, type: 3}
     type: 5
+  - clip: {fileID: 8300000, guid: 8948530a3ddd269418e413db0037156b, type: 3}
+    type: 6
+  - clip: {fileID: 8300000, guid: 20c0dd3935e8b9d4b9f07ad299eff7ca, type: 3}
+    type: 6
 --- !u!1 &3256504802042909521
 GameObject:
   m_ObjectHideFlags: 0

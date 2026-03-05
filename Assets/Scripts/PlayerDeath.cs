@@ -19,6 +19,7 @@ void Start()
         if (collision.gameObject.CompareTag("Danger") ||collision.gameObject.CompareTag("Ennemie"))
         {
             Mourir();
+            AudioManager.Instance.PlaySound(AudioType.death, AudioSourceType.game);
         }
     }
 
@@ -28,6 +29,7 @@ void Start()
         if (other.CompareTag("Danger"))
         {
             Mourir();
+            AudioManager.Instance.PlaySound(AudioType.death, AudioSourceType.game);
         }
     }
 

@@ -33,6 +33,7 @@ public class Projectile : MonoBehaviour
                 Instantiate(impactVFX, transform.position, Quaternion.identity);
             }
             Destroy(gameObject);
+            AudioManager.Instance.PlaySound(AudioType.fireballWallHit, AudioSourceType.game);
             Debug.Log("Touché le sol/mur");
         }
 
@@ -45,6 +46,8 @@ public class Projectile : MonoBehaviour
             }
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            AudioManager.Instance.PlaySound(AudioType.ennemieDeath, AudioSourceType.game);
+
         }
 
         // 4. DANGER / PICS (On détruit UNIQUEMENT le projectile)

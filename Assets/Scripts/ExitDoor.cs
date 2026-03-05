@@ -22,6 +22,7 @@ public class ExitDoor : MonoBehaviour
 
 
                 aEteTouchee = true;
+                AudioManager.Instance.PlaySound(AudioType.levelEnd, AudioSourceType.game);
                 Debug.Log("Niveau terminé ! Le joueur entre dans la porte.");
 
                 // On lance la coroutine en lui passant l'objet du joueur
