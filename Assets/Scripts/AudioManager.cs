@@ -12,7 +12,6 @@ public enum AudioType
     dash,
     fireballWallBreak,
     music,
-    step,
     getKey
 }
 

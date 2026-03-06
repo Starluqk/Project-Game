@@ -92,13 +92,10 @@ public class PlayerController : MonoBehaviour
         {
             sr.flipX = false;
             ShowCanva();
-            
-            AudioManager.Instance.PlaySound(AudioType.step, AudioSourceType.player);
         }
         else if (moveInput < 0)
 
         {
-            AudioManager.Instance.PlaySound(AudioType.step, AudioSourceType.player);
             sr.flipX = true;
             canvas.enabled = true;
         }

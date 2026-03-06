@@ -8,7 +8,7 @@ public class MusicManager : MonoBehaviour
     {
         AudioManager.Instance.PlaySound(AudioType.music, AudioSourceType.musicSource);
         
-        if (instance == null)
+        if (instance == null) 
         {
             instance = this;
             DontDestroyOnLoad(gameObject); 
