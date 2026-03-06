@@ -44,6 +44,7 @@ public class PlayerController : MonoBehaviour
     public Transform firePoint;
     public float projectileSpeed = 15f;
     private Vector2 lastDirection = Vector2.right;
+    private Canvas canvas;
 
     void Start()
     {
@@ -54,20 +55,21 @@ public class PlayerController : MonoBehaviour
         anim = GetComponent<Animator>();
         gravitydefault = rb.gravityScale;
         if (tr != null) tr.emitting = false;
-        
+        canvas = FindAnyObjectByType<Canvas>();
         UpdateCharacterAppearance();
     }
 
     void Update()
     {
         // Mise à jour de l'affichage UI
+        
         StaminaDisplay = Stamina;
         Stamina = Mathf.Clamp(Stamina, 0, StaminaMax);
         int coutActuel = GameManager.dashCost;
         int actionsRestantes = Stamina / coutActuel;
         
         // SWITCH PERSO (Clic Droit)
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.alreadyLoad)
         {
             isPlayerOne = !isPlayerOne;
             UpdateCharacterAppearance();
@@ -81,8 +83,19 @@ public class PlayerController : MonoBehaviour
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
         anim.SetBool("isGrounded", isGrounded);
 
-        if (moveInput > 0) sr.flipX = false;
-        else if (moveInput < 0) sr.flipX = true;
+        if (moveInput > 0)
+        {
+            sr.flipX = false;
+            ShowCanva();
+        }
+        else if (moveInput < 0)
+
+        {
+            sr.flipX = true;
+            canvas.enabled = true;
+        }
+        
+        
 
         // Direction Tir
         if (moveInput != 0 || verticalInput != 0)
@@ -100,11 +113,13 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             jumpBufferCounter = 0f;
             AudioManager.Instance.PlaySound(AudioType.jump, AudioSourceType.player);
+            ShowCanva();
         }
 
         // --- ACTIONS (Clic Gauche) ---
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.alreadyLoad)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !GameManager.alreadyLoad)
         {
+            ShowCanva();
             // DASH (Perso 1)
             if (isPlayerOne && canDash)
             {
@@ -129,7 +144,14 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            
+            canvas.enabled = false;
             GameManager.EchapMenu();
+        }
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            StartCoroutine(SequenceRestart());
         }
     }
 
@@ -172,5 +194,17 @@ public class PlayerController : MonoBehaviour
         isDashing = false;
         yield return new WaitForSeconds(dashCooldown);
         canDash = true;
+    }
+
+    public void ShowCanva()
+    {
+        canvas.enabled = true;
+    }
+
+    IEnumerator SequenceRestart()
+    {
+        GameManager.EndTransition();
+        yield return new WaitForSeconds(1f);
+        GameManager.ReloadScene();
     }
 }

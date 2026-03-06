@@ -55,10 +55,11 @@ public class ExitDoor : MonoBehaviour
         {
             rb.simulated = false; 
         }
-
+        
         // On attend que l'animation de la porte se termine
         yield return new WaitForSeconds(1.5f);
-
+        GameManager.EndTransition();
+        yield return new WaitForSeconds(1f);
         // On change de niveau
         GameManager.NextLevel();
     }

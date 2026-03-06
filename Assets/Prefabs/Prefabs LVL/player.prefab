@@ -362,6 +362,7 @@ MonoBehaviour:
   projectilePrefab: {fileID: 1112761263842588772, guid: 6c7c594d8070ad94785bb6fade09f0e8, type: 3}
   firePoint: {fileID: 9129400005396942579}
   projectileSpeed: 15
+  canvas: {fileID: 3451268535975799306, guid: 378e3ade2ec952b4182218fb5b087c92, type: 3}
 --- !u!50 &2714988937101593734
 Rigidbody2D:
   serializedVersion: 5

@@ -28,6 +28,7 @@ public static class GameManager
     {
         currentLevel = 1; // On reset au niveau 1
         SceneManager.LoadScene("Level 1");
+        StartTransition();
     }
 
     public static void ShowLevels()
@@ -44,15 +45,16 @@ public static class GameManager
             currentLevel++;
             SceneManager.LoadScene("Level " + currentLevel.ToString());
             ShowLevelNumber();
+            StartTransition();
         }
     }
     
     public static void ReloadScene()
     {
-        alreadyLoad = false;
-        Time.timeScale = 1f;
+        OnCloseMenu();
         nbDeath++;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StartTransition();
     }
 
     public static void ShowLevelNumber()
@@ -73,16 +75,30 @@ public static class GameManager
 
     public static void BackToMainMenu()
     {
-        alreadyLoad = false;
-        Time.timeScale = 1;
+        OnCloseMenu();
         SceneManager.LoadScene("Main Menu");
     }
 
     public static void CloseMenu()
     {
+        OnCloseMenu();
+        SceneManager.UnloadSceneAsync("Echap Menu");
+    }
+
+    public static void OnCloseMenu()
+    {
         Time.timeScale = 1;
         alreadyLoad = false;
-        SceneManager.UnloadSceneAsync("Echap Menu");
+    }
+
+    public static void StartTransition()
+    {
+        SceneManager.LoadScene("Transition", LoadSceneMode.Additive);
+    }
+    
+    public static void EndTransition()
+    {
+        SceneManager.LoadScene("EndTransition", LoadSceneMode.Additive);
     }
     
 }
