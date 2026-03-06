@@ -26,6 +26,7 @@ public class AudioManager : MonoBehaviour
 {
     static public AudioManager Instance;
     public float volume = 1f;
+    public float volumeMusic = 1f;
     public AudioSource gameSource;
     public AudioSource playerSource;
     public AudioSource musicSource;
@@ -48,7 +49,7 @@ public class AudioManager : MonoBehaviour
     {
         gameSource.volume = volume;
         playerSource.volume = volume;
-        musicSource.volume = volume;
+        musicSource.volume = volumeMusic;
     }
 
     public void PlaySound(AudioType type, AudioSourceType sourceType)
@@ -59,6 +60,10 @@ public class AudioManager : MonoBehaviour
             gameSource.PlayOneShot(clip);
         }
         else if (sourceType == AudioSourceType.player)
+        {
+            playerSource.PlayOneShot(clip);
+        }
+        else if (sourceType == AudioSourceType.music)
         {
             playerSource.PlayOneShot(clip);
         }
