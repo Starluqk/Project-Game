@@ -9,6 +9,7 @@ public class EchapMenuScript : MonoBehaviour
     public void ButtonMainMenu()
     {
         GameManager.BackToMainMenu();
+        StartCoroutine(GameManager.SequenceClickButton(1));
     }
 
     public void ButtonBack()

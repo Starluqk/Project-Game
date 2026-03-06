@@ -151,7 +151,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.R))
         {
-            StartCoroutine(SequenceRestart());
+            StartCoroutine(GameManager.SequenceRestart());
         }
     }
 
@@ -200,11 +200,5 @@ public class PlayerController : MonoBehaviour
     {
         canvas.enabled = true;
     }
-
-    IEnumerator SequenceRestart()
-    {
-        GameManager.EndTransition();
-        yield return new WaitForSeconds(1f);
-        GameManager.ReloadScene();
-    }
+    
 }

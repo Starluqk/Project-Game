@@ -1,7 +1,6 @@
-using System.Linq;
-using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public static class GameManager
 {
@@ -34,7 +33,7 @@ public static class GameManager
     public static void ShowLevels()
     {
         SceneManager.LoadScene("Select Level");
-        ShowLevelNumber();
+        StartTransition();
     }
 
     public static void NextLevel()
@@ -76,7 +75,7 @@ public static class GameManager
     public static void BackToMainMenu()
     {
         OnCloseMenu();
-        SceneManager.LoadScene("Main Menu");
+        
     }
 
     public static void CloseMenu()
@@ -100,5 +99,32 @@ public static class GameManager
     {
         SceneManager.LoadScene("EndTransition", LoadSceneMode.Additive);
     }
+
+    public static void QuitGame()
+    {
+        Application.Quit();
+    }
+    public static IEnumerator SequenceRestart()
+    {
+        EndTransition();
+        yield return new WaitForSeconds(1f);
+        ReloadScene();
+    }
     
+    public static IEnumerator SequenceClickButton(int mode)
+    {
+        EndTransition();
+        yield return new WaitForSeconds(1f);
+        switch (mode)
+        {
+            case 1: SceneManager.LoadScene("Main Menu");
+                break;
+            case 2:
+                PlayButton();
+                break;
+            case 3:
+                ShowLevels();
+                break;
+        }
+    }
 }

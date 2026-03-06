@@ -13,11 +13,17 @@ public class LevelOnClick : MonoBehaviour
 
     public void OnPlay()
     {
-        GameManager.PlayButton();
+        //GameManager.PlayButton();
+        StartCoroutine(GameManager.SequenceClickButton(2));
     }
 
     public void OnChooseLevel()
     {
-        GameManager.ShowLevels();
+        StartCoroutine(GameManager.SequenceClickButton(3));
+    }
+
+    public void OnQuit()
+    {
+        GameManager.QuitGame();
     }
 }

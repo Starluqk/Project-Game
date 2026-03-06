@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.SceneManagement; // Pour pouvoir recharger la scène
+using System.Collections;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -45,7 +46,7 @@ void Start()
         // Recharge le niveau actuel
         
         
-        GameManager.ReloadScene();
+        StartCoroutine(GameManager.SequenceRestart());
     }
 
     public void actionOnRestart()
@@ -67,4 +68,5 @@ void Start()
         // 4. On attend 1 seconde avant de recharger 
         Invoke("ReloadScene", 1f);
     }
+    
 }
