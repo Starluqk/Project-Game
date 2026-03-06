@@ -111,7 +111,7 @@ public static class GameManager
         ReloadScene();
     }
     
-    public static IEnumerator SequenceClickButton(int mode)
+    public static IEnumerator SequenceClickButton(int mode, string lvl = "")
     {
         EndTransition();
         yield return new WaitForSeconds(1f);
@@ -124,6 +124,9 @@ public static class GameManager
                 break;
             case 3:
                 ShowLevels();
+                break;
+            case 4:
+                ClickLevel(lvl);
                 break;
         }
     }

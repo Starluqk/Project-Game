@@ -8,7 +8,7 @@ public class LevelOnClick : MonoBehaviour
     
     public void OnClick()
     {
-        GameManager.ClickLevel(levelLabell.text);
+        StartCoroutine(GameManager.SequenceClickButton(4, levelLabell.text));
     }
 
     public void OnPlay()

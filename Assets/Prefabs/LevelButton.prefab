@@ -400,6 +400,10 @@ MonoBehaviour:
   - eventID: 0
     callback:
       m_PersistentCalls:
+        m_Calls: []
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 1013601169164757140}
           m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
