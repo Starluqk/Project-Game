@@ -11,7 +11,9 @@ public enum AudioType
     transformation,
     dash,
     fireballWallBreak,
-    music
+    music,
+    step,
+    getKey
 }
 
 public enum AudioSourceType

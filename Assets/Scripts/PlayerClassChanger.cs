@@ -20,6 +20,7 @@ public class PlayerClassChanger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             SwitchCharacter();
+            AudioManager.Instance.PlaySound(AudioType.transformation, AudioSourceType.player);
         }
     }
 
@@ -29,7 +30,6 @@ public class PlayerClassChanger : MonoBehaviour
         {
             spriteRenderer.sprite = character2Sprite;
             isCharacter1 = false;
-
         }
         else
         {
@@ -37,6 +37,5 @@ public class PlayerClassChanger : MonoBehaviour
             isCharacter1 = true;
 
         }
-        AudioManager.Instance.PlaySound(AudioType.transformation, AudioSourceType.player);
     }
 }
