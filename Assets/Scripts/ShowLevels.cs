@@ -49,7 +49,7 @@ public class ShowLevels : MonoBehaviour
     public void NextPage()
     {
         DeleteDoors();
-        if (nbPage * 10 + 1  < GameManager.NbLevels) nbPage++;
+        if ((nbPage + 1) * 10  < GameManager.NbLevels) nbPage++;
         else nbPage = 0;
         ShowLevelsNumber(nbPage);
     }
