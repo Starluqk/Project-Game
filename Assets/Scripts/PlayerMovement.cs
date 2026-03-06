@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         int actionsRestantes = Stamina / coutActuel;
         
         // SWITCH PERSO (Clic Droit)
-        if (Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.alreadyLoad)
+        if (Input.GetKeyDown(KeyCode.Mouse1) && !GameManager.alreadyLoad)
         {
             isPlayerOne = !isPlayerOne;
             UpdateCharacterAppearance();
@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // --- ACTIONS (Clic Gauche) ---
-        if (Input.GetKeyDown(KeyCode.Mouse1) && !GameManager.alreadyLoad)
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !GameManager.alreadyLoad)
         {
             ShowCanva();
             // DASH (Perso 1)

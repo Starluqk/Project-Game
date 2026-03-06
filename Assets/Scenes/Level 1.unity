@@ -577,6 +577,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 4061044729396059159, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
+      propertyPath: musicSource
+      value: 
+      objectReference: {fileID: 594297591}
     - target: {fileID: 8814356063393554397, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.48004
@@ -622,6 +626,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
+--- !u!82 &594297591 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 323936241273854531, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
+  m_PrefabInstance: {fileID: 594297590}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &611161597
 GameObject:
   m_ObjectHideFlags: 0
