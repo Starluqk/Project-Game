@@ -4,9 +4,10 @@ public class MusicManager : MonoBehaviour
 {
     private static MusicManager instance;
 
-    void Awake()
+    void Start()
     {
         AudioManager.Instance.PlaySound(AudioType.music, AudioSourceType.musicSource);
+        
         if (instance == null)
         {
             instance = this;
@@ -16,5 +17,8 @@ public class MusicManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+    void Awake()
+    {
     }
 }
