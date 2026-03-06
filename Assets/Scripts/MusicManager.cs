@@ -4,14 +4,13 @@ public class MusicManager : MonoBehaviour
 {
     private static MusicManager instance;
 
-    void Awake()
+    void Start()
     {
-         AudioManager.Instance.PlaySound(AudioType.music, AudioSourceType.musicSource);
-        
-        if (instance != null) 
+        AudioManager.Instance.PlaySound(AudioType.music, AudioSourceType.musicSource);
+        if (instance == null)
         {
             instance = this;
-            DontDestroyOnLoad(gameObject); 
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
