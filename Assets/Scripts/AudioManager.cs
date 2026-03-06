@@ -20,7 +20,7 @@ public enum AudioSourceType
 {
     game,
     player,
-    music
+    musicSource
 }
 public class AudioManager : MonoBehaviour
 {
@@ -63,7 +63,7 @@ public class AudioManager : MonoBehaviour
         {
             playerSource.PlayOneShot(clip);
         }
-        else if (sourceType == AudioSourceType.music)
+        else if (sourceType == AudioSourceType.musicSource)
         {
             playerSource.PlayOneShot(clip);
         }

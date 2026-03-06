@@ -15,6 +15,7 @@ public GameObject murADetruire;
             }
             GameManager.hasKey = true;
             Debug.Log("Key has been added");
+            AudioManager.Instance.PlaySound(AudioType.getKey, AudioSourceType.game);
             if (pickUpEffect != null)
                 Instantiate(pickUpEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);

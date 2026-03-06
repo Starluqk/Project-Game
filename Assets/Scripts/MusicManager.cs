@@ -6,7 +6,7 @@ public class MusicManager : MonoBehaviour
 
     void Awake()
     {
-        AudioManager.Instance.PlaySound(AudioType.music, AudioSourceType.music);
+        AudioManager.Instance.PlaySound(AudioType.music, AudioSourceType.musicSource);
         if (instance == null)
         {
             instance = this;
