@@ -20,7 +20,7 @@ public class PlayerClassChanger : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             SwitchCharacter();
-            AudioManager.Instance.PlaySound(AudioType.transformation, AudioSourceType.player);
+          
         }
     }
 

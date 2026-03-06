@@ -45,6 +45,9 @@ public class PlayerController : MonoBehaviour
     public float projectileSpeed = 15f;
     private Vector2 lastDirection = Vector2.right;
     private Canvas canvas;
+    
+    [Header("vfx")]
+    public GameObject switchvfx;
 
     void Start()
     {
@@ -73,6 +76,8 @@ public class PlayerController : MonoBehaviour
         {
             isPlayerOne = !isPlayerOne;
             UpdateCharacterAppearance();
+            AudioManager.Instance.PlaySound(AudioType.transformation, AudioSourceType.player);
+            SpawnSwitchVFX();
         }
 
         if (isDashing) return;
@@ -200,5 +205,12 @@ public class PlayerController : MonoBehaviour
     {
         canvas.enabled = true;
     }
-    
+
+    void SpawnSwitchVFX()
+    {
+        if (switchvfx != null)
+        {
+            Instantiate(switchvfx,transform.position, Quaternion.identity);
+        }
+    }
 }
