@@ -11,7 +11,6 @@ public enum AudioType
     transformation,
     dash,
     fireballWallBreak,
-    music,
     getKey
 }
 
@@ -39,18 +38,23 @@ public class AudioManager : MonoBehaviour
     
     public AudioData[] audioData;
     
+    private static MusicManager instance;
     void Awake()
-    {
-        Instance = this;
-    }
-
-    void Start()
     {
         gameSource.volume = volume;
         playerSource.volume = volume;
         musicSource.volume = volumeMusic;
+        if (Instance == null)
+        {
+        DontDestroyOnLoad(gameObject);
+        Instance = this;
+        }
+        else
+        {
+        Destroy(gameObject);
+         }
     }
-
+    
     public void PlaySound(AudioType type, AudioSourceType sourceType)
     {
         AudioClip clip = getClip(type);
