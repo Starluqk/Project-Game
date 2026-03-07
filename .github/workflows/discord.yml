@@ -12,11 +12,5 @@ jobs:
       - name: Send Discord notification
         run: |
           curl -H "Content-Type: application/json" \
-          -d "{
-            \"content\": \"🚀 Nouveau push
-Repo : ${{ github.repository }}
-Auteur : ${{ github.actor }}
-Commit : ${{ github.event.head_commit.message }}
-Fichier modifié : ${{ github.event.head_commit.modified[0] }}\"
-          }" \
+          -d "{\"content\":\"🚀 Nouveau push\nRepo : ${{ github.repository }}\nAuteur : ${{ github.actor }}\nCommit : ${{ github.event.head_commit.message }}\nFichier modifié : ${{ github.event.head_commit.modified[0] }}\"}" \
           ${{ secrets.DISCORD_WEBHOOK }}
