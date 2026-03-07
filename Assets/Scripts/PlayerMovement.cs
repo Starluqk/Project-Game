@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
     public LayerMask groundLayer;
     public float jumpBufferTime = 0.2f;
     private float jumpBufferCounter;
-    private bool isGrounded;
+    static public bool isGrounded;
 
     [Header("Dash (Perso 1 uniquement)")]
     public float dashForce = 20f;

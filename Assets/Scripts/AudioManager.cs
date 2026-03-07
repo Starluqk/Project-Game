@@ -11,14 +11,16 @@ public enum AudioType
     transformation,
     dash,
     fireballWallBreak,
-    getKey
+    getKey,
+    step
 }
 
 public enum AudioSourceType
 {
     game,
     player,
-    musicSource
+    musicSource,
+    stepSource
 }
 public class AudioManager : MonoBehaviour
 {
@@ -28,6 +30,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource gameSource;
     public AudioSource playerSource;
     public AudioSource musicSource;
+    public AudioSource stepSource;
 
     [System.Serializable]
     public struct AudioData
@@ -43,6 +46,7 @@ public class AudioManager : MonoBehaviour
     {
         gameSource.volume = volume;
         playerSource.volume = volume;
+        stepSource.volume = volume;
         musicSource.volume = volumeMusic;
         if (Instance == null)
         {
@@ -54,7 +58,6 @@ public class AudioManager : MonoBehaviour
         Destroy(gameObject);
          }
     }
-    
     public void PlaySound(AudioType type, AudioSourceType sourceType)
     {
         AudioClip clip = getClip(type);
@@ -68,8 +71,13 @@ public class AudioManager : MonoBehaviour
         }
         else if (sourceType == AudioSourceType.musicSource)
         {
-            playerSource.PlayOneShot(clip);
+            musicSource.PlayOneShot(clip);
         }
+        else if (sourceType == AudioSourceType.stepSource)
+        {
+            stepSource.PlayOneShot(clip);
+        }
+
         
     }
 
