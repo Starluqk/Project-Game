@@ -7,10 +7,16 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Send Discord message
+      - name: Send Discord notification
         run: |
           curl -H "Content-Type: application/json" \
-          -d "{\"content\": \"🚀 Nouveau push sur Project-Game par ${{ github.actor }}\"}" \
+          -d "{
+            \"content\": \"🚀 Nouveau push
+Repo : ${{ github.repository }}
+Auteur : ${{ github.actor }}
+Commit : ${{ github.event.head_commit.message }}
+Fichier modifié : ${{ github.event.head_commit.modified[0] }}\"
+          }" \
           ${{ secrets.DISCORD_WEBHOOK }}
-        
