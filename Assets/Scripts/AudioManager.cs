@@ -20,7 +20,6 @@ public enum AudioSourceType
     game,
     player,
     musicSource,
-    stepSource
 }
 public class AudioManager : MonoBehaviour
 {
@@ -30,7 +29,6 @@ public class AudioManager : MonoBehaviour
     public AudioSource gameSource;
     public AudioSource playerSource;
     public AudioSource musicSource;
-    public AudioSource stepSource;
 
     [System.Serializable]
     public struct AudioData
@@ -46,7 +44,6 @@ public class AudioManager : MonoBehaviour
     {
         gameSource.volume = volume;
         playerSource.volume = volume;
-        stepSource.volume = volume;
         musicSource.volume = volumeMusic;
         if (Instance == null)
         {
@@ -73,11 +70,6 @@ public class AudioManager : MonoBehaviour
         {
             musicSource.PlayOneShot(clip);
         }
-        else if (sourceType == AudioSourceType.stepSource)
-        {
-            stepSource.PlayOneShot(clip);
-        }
-
         
     }
 
