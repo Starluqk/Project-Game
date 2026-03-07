@@ -891,22 +891,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 323936241273854531, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
+      propertyPath: m_Resource
+      value: 
+      objectReference: {fileID: 8300000, guid: a90c5721a61b9984b8bbf4d448d6860e, type: 3}
     - target: {fileID: 608648035086861675, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
-    - target: {fileID: 4061044729396059159, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
-      propertyPath: audioData.Array.data[4].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 8a7c60d95d45d374bb0f63d1462a26df, type: 3}
-    - target: {fileID: 4061044729396059159, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
-      propertyPath: audioData.Array.data[6].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: f83e5c53c3f92084c864cfedcb5388ec, type: 3}
-    - target: {fileID: 4061044729396059159, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
-      propertyPath: audioData.Array.data[7].clip
-      value: 
-      objectReference: {fileID: 8300000, guid: 35bc146d8e4e1144295ffee6e06ccfe1, type: 3}
     - target: {fileID: 8814356063393554397, guid: 43b0dec3579c79747811bd75bccb7398, type: 3}
       propertyPath: m_LocalPosition.x
       value: 12.48004
